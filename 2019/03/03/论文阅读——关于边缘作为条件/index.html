@@ -8,7 +8,7 @@
   <meta name="description" content>
   <meta name="author" content="Shuki">
   <!-- Open Graph Data -->
-  <meta property="og:title" content="论文阅读——关于边缘作为条件">
+  <meta property="og:title" content="论文阅读——关于边缘作为网络条件">
   <meta property="og:description" content>
   <meta property="og:site_name" content="Shu Ki">
   <meta property="og:type" content="article">
@@ -43,7 +43,7 @@
     <div class="row">
       <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
         <div class="page-title with-background-image">
-          <p class="title">论文阅读——关于边缘作为条件</p>
+          <p class="title">论文阅读——关于边缘作为网络条件</p>
           <p class="subtitle"></p>
         </div>
         <div class="site-menu with-background-image">
@@ -100,8 +100,14 @@
           <!-- Date -->
           <span class="date-time info">On
             <span class="date">2019-03-03</span>
-            <span class="time">09:28:38</span>
+            <span class="time">09:33:48</span>
           </span>
+          
+          <!--  Categories  -->
+            <span class="categories info">Under 
+
+<a href="/categories/深度学习/">深度学习</a>
+</span>
           
         </div>
         <!-- Tags -->
@@ -120,7 +126,7 @@
 <h6 id="Revisiting-Deep-Intrinsic-Image-Decompositions"><a href="#Revisiting-Deep-Intrinsic-Image-Decompositions" class="headerlink" title="Revisiting Deep Intrinsic Image Decompositions"></a><strong>Revisiting Deep Intrinsic Image Decompositions</strong></h6><p>这是17年出的一篇论文。</p>
 <p>先将图片放入直接本征分解的网络中，得到粗略的albedo图像和shading图像。同时，将输入图像和其边缘图一起放进一个指导网络中，输出一个指导特征。利用特征指导和粗略的albedo图像经过Domain Filter得到细化的albedo图像，最后利用原图得到细化的shading图像。</p>
 <p>论文主要有两个网络：粗略的本征分解网络和边缘特征指导网络。下图是网络框架：</p>
-<p><img src="\\images\pasted-1.png\" alt="upload successful"></p>
+<p><img src="\\images\pasted-1.png" alt></p>
 <p>然后再利用传统的算法去细化albedo图像。因为本征分解的一个难点就是图像边缘处理不是很好。本文用边缘图作为一种特征指导，可以改善albedo图像的边缘。</p>
 <p>其实还可以用到估计深度图，生成的深度图也是不同深度物体之间的边缘比较模糊。</p>
 
