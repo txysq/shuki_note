@@ -8,7 +8,7 @@
   <meta name="description" content>
   <meta name="author" content="Shuki">
   <!-- Open Graph Data -->
-  <meta property="og:title" content="Hello hexo">
+  <meta property="og:title" content="论文阅读——关于边缘作为条件">
   <meta property="og:description" content>
   <meta property="og:site_name" content="Shu Ki">
   <meta property="og:type" content="article">
@@ -43,7 +43,7 @@
     <div class="row">
       <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
         <div class="page-title with-background-image">
-          <p class="title">Hello hexo</p>
+          <p class="title">论文阅读——关于边缘作为条件</p>
           <p class="subtitle"></p>
         </div>
         <div class="site-menu with-background-image">
@@ -99,24 +99,30 @@
           
           <!-- Date -->
           <span class="date-time info">On
-            <span class="date">2019-03-02</span>
+            <span class="date">2019-03-03</span>
             <span class="time">09:26:15</span>
           </span>
           
         </div>
         <!-- Tags -->
         
+          <div class="post-tags text-muted">
+            Tags: 
+
+<a class="tag" href="/tags/文献阅读/">#文献阅读</a> <a class="tag" href="/tags/边缘图/">#边缘图</a>
+
+
+          </div>
+        
         <!-- Post Main Content -->
         <div class="post-content">
-          <p>开启我的hexo博客之旅~~~</p>
-<h3 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h3><h4 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h4 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h4 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h4 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+          <p>目前提出的网络都是带有条件的网络，也可以称之为带有先验的网络，比较常见的条件有label，语义图，mask，人脸关键点和人体姿态估计点。有些是原本就存在的条件，有些则需要某种方法去获取。文章分析将边缘作为一个条件/先验，用于本征分解的指导和图像修复的结构先验。</p>
+<h6 id="Revisiting-Deep-Intrinsic-Image-Decompositions"><a href="#Revisiting-Deep-Intrinsic-Image-Decompositions" class="headerlink" title="Revisiting Deep Intrinsic Image Decompositions"></a><strong>Revisiting Deep Intrinsic Image Decompositions</strong></h6><p>这是17年出的一篇论文。</p>
+<p>先将图片放入直接本征分解的网络中，得到粗略的albedo图像和shading图像。同时，将输入图像和其边缘图一起放进一个指导网络中，输出一个指导特征。利用特征指导和粗略的albedo图像经过Domain Filter得到细化的albedo图像，最后利用原图得到细化的shading图像。</p>
+<p>论文主要有两个网络：粗略的本征分解网络和边缘特征指导网络。下图是网络框架：</p>
+<p><img src="\\images\pasted-1.png\" alt="upload successful"></p>
+<p>然后再利用传统的算法去细化albedo图像。因为本征分解的一个难点就是图像边缘处理不是很好。本文用边缘图作为一种特征指导，可以改善albedo图像的边缘。</p>
+<p>其实还可以用到估计深度图，生成的深度图也是不同深度物体之间的边缘比较模糊。</p>
 
         </div>
       </div>
