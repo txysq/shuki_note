@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+  <!-- Html Head Tag-->
+  <head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content>
+  <meta name="author" content="Shuki">
+  <!-- Open Graph Data -->
+  <meta property="og:title" content="《Pytorch中文手册》第一章知识(1)">
+  <meta property="og:description" content>
+  <meta property="og:site_name" content="Shu Ki">
+  <meta property="og:type" content="article">
+  <meta property="og:image" content="http://yoursite.com">
+  
+    <link rel="alternate" href="/atom.xml" title="Shu Ki" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+
+  <!-- Site Title -->
+  <title>Shu Ki</title>
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="/css/bootstrap.min.css">
+  <!-- Custom CSS -->
+  
+  <link rel="stylesheet" href="/css/style.light.css">
+
+  <!-- Google Analytics -->
+  
+
+</head>
+
+  <body>
+    <!-- Page Header -->
+
+
+<header class="site-header header-background" style="background-image: url(/img/default-banner-dark.jpg)">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <div class="page-title with-background-image">
+          <p class="title">《Pytorch中文手册》第一章知识(1)</p>
+          <p class="subtitle"></p>
+        </div>
+        <div class="site-menu with-background-image">
+          <ul>
+            
+              <li>
+                <a href="/">
+                  
+                  Home
+                  
+                </a>
+              </li>
+            
+              <li>
+                <a href="/archives">
+                  
+                  Archives
+                  
+                </a>
+              </li>
+            
+              <li>
+                <a href="https://github.com/txysq">
+                  
+                  Github
+                  
+                </a>
+              </li>
+            
+              <li>
+                <a href="/categories">
+                  
+                  Categories
+                  
+                </a>
+              </li>
+            
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<article>
+  <div class="container typo">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <div class="post-info text-muted">
+          
+            <!-- Author -->
+            <span class="author info">By Shuki</span>
+          
+          <!-- Date -->
+          <span class="date-time info">On
+            <span class="date">2019-03-07</span>
+            <span class="time">09:18:14</span>
+          </span>
+          
+        </div>
+        <!-- Tags -->
+        
+        <!-- Post Main Content -->
+        <div class="post-content">
+          <p>pytorch是NumPy的替代品，可以使用GPU的强大计算能力，作为深度学习的一个研究平台。包含<strong>自动求导</strong>系统的的深度神经网络</p>
+<h5 id="Tensors（张量）"><a href="#Tensors（张量）" class="headerlink" title="Tensors（张量）"></a>Tensors（张量）</h5><p><strong>所有的 Tensor 类型默认都是基于CPU</strong></p>
+<p>#定义张量<strong>torch.tensor</strong><br><br> <code>import torch
+ x = torch.tensor([5.5, 3],[4,3],[5,2])</code><br><br> 根据现有的张量$x$ 创建新的张量<br> <code>y = torch.randn_like(x, dtype=torch.float)</code><br><br> <strong>tensor.size</strong>方法可以打印尺度大小<br> <code>print(x.size())</code><br><br> 使用索引方式来进行对张量的操作<code>print(x[:, 1])</code>返回<code>tensor([3,3,2])</code><br><br> <strong>torch.view</strong>: 可以改变张量的维度和大小  <code>y = x.view(2,3)</code><br></p>
+<h6 id="Numpy转换"><a href="#Numpy转换" class="headerlink" title="Numpy转换"></a><strong>Numpy转换</strong></h6><p><code>b = a.numpy()</code> a是tensor, b为numpy<br><br><code>a = torch.from_numpy(b)</code> b为numpy, a是tensor<br></p>
+<h6 id="cuda"><a href="#cuda" class="headerlink" title="cuda"></a><strong>cuda</strong></h6><p>直接从GPU创建张量<code>y = torch.ones_like(x, device=torch.device(&quot;cuda&quot;))</code><br><br>使用<strong>.to</strong>方法 可以将Tensor移动到任何设备中<code>x = x.to(torch.device(&quot;cuda&quot;))</code> </p>
+<h5 id="Autograd-自动求导机制"><a href="#Autograd-自动求导机制" class="headerlink" title="Autograd: 自动求导机制"></a><strong>Autograd: 自动求导机制</strong></h5><p>torch.Tensor是这个包的核心类。如果设置<strong> .requires_grad</strong>为<strong>True</strong>，那么将会追踪所有对于该张量的操作。 当完成计算后通过调用<strong>.backward()</strong>，自动计算所有的梯度， 这个张量的所有梯度将会自动积累到<strong>.grad</strong>属性。<br><br><code>x = torch.ones(2, 2, requires_grad=True)</code> 会得到grad_fn = AddBackward<br><br>要阻止张量跟踪历史记录，可以调用<strong>.detach()</strong>方法将其与计算历史记录分离，并禁止跟踪它将来的计算记录<code>fake_AB.detach()</code>。可以将代码块包装在<code>with torch.no_grad()：</code>比如<br><code>with torch.no_grad()：
+    y = x ** 2 #不会添加到计算图中</code><br></p>
+<p>计算导数，你可以在Tensor上调用<strong>.backward()</strong>。 如果Tensor是一个<strong>标量</strong>（即它包含一个元素数据）则不需要为backward()指定任何参数。但是如果它有更多的元素，需要指定一个<strong>gradient</strong>参数来匹配张量的<strong>形状</strong>。<br><br><code>y = torch.tensor([-920.6895, -115.7301, -867.6995])
+gradients = torch.tensor([0.1, 0.01, 0.001], dtype=torch.float)
+y.backward(gradients)</code></p>
+<h5 id="神经网络"><a href="#神经网络" class="headerlink" title="神经网络"></a><strong>神经网络</strong></h5><p><code>import torch 
+import torch.nn as nn
+import torch.nn.functional as f 
+import torch.optim as optim</code><br><br><strong>定义网络</strong><br><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line">class ysq_net(nn.Module):</span><br><span class="line">	#定义卷积和全连接层</span><br><span class="line">    def __init__(self):</span><br><span class="line">        super(ysq_net,self).__init__()</span><br><span class="line">        self.conv1 = nn.Conv2d(in_channels=1,out_channels=6,kernel_size=5)</span><br><span class="line">        self.conv2 = nn.Conv2d(in_channels=6, out_channels=16, kernel_size=5)</span><br><span class="line">        self.fc_1 = nn.Linear(16*5*5,120)</span><br><span class="line">        self.fc_2 = nn.Linear(120,84)</span><br><span class="line">        self.fc_3 = nn.Linear(84,10)</span><br><span class="line">	#定义简单的前馈</span><br><span class="line">    def forward(self,x):</span><br><span class="line">        x1 = f.max_pool2d(f.relu(self.conv1(x)),(2,2))</span><br><span class="line">        x2 = f.max_pool2d(f.relu(self.conv2(x1)),(2,2))</span><br><span class="line">        x3 = x2.view(-1,self.sum_flat_features(x2))</span><br><span class="line">        x4 = f.relu(self.fc_1(x3))</span><br><span class="line">        x5 = f.relu(self.fc_2(x4))</span><br><span class="line">        x6 = self.fc_3(x5)</span><br><span class="line">        return x6</span><br><span class="line">	#特征展开</span><br><span class="line">    def sum_flat_features(self,x):</span><br><span class="line">        size = x.size()[1:]</span><br><span class="line">        num_feature = 1</span><br><span class="line">        for s in size:</span><br><span class="line">            num_feature *= s</span><br><span class="line">        return num_feature</span><br><span class="line">net = ysq_net()</span><br><span class="line">print(net)</span><br><span class="line"></span><br><span class="line">for i in range(10):</span><br><span class="line">   #随机输入，得到输出</span><br><span class="line">    input =torch.randn(1,1,32,32)</span><br><span class="line">    out = net(input)</span><br><span class="line">    print(out)</span><br><span class="line">   #所有参数的梯度缓存清零</span><br><span class="line">    net.zero_grad()</span><br><span class="line">    print(&apos;conv1.bias.grad&apos;)</span><br><span class="line">    print(net.conv1.bias.grad)</span><br><span class="line">    #out.backward(torch.randn(1, 10))</span><br><span class="line">   #定义优化器为随机梯度下降</span><br><span class="line">    optimizer = optim.SGD(net.parameters(), lr=0.01)</span><br><span class="line">    optimizer.zero_grad()</span><br><span class="line">	#与真实值MSE损失</span><br><span class="line">    target = torch.randn(10)</span><br><span class="line">    target = target.view(1,-1)</span><br><span class="line">    criterion = nn.MSELoss()</span><br><span class="line">    loss = criterion(out,target)</span><br><span class="line">   #损失反向传播</span><br><span class="line">    loss.backward()</span><br><span class="line">    print(loss)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    print(&apos;conv1.bias.grad&apos;)</span><br><span class="line">    print(net.conv1.bias.grad)</span><br><span class="line">	#更新权重</span><br><span class="line">    optimizer.step()</span><br></pre></td></tr></table></figure></p>
+<p><img src="/2019/03/07/Pytorch中文手册》知识/1.png" alt="bb"><br><img src="/2019/03/07/Pytorch中文手册》知识/2.png" alt="bb"></p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</article>
+
+
+
+    <!-- Footer -->
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <p class="copyright text-muted">
+          Theme By <a target="_blank" href="https://github.com/levblanc">Levblanc.</a>
+          Inspired By <a target="_blank" href="https://github.com/klugjo/hexo-theme-clean-blog">Clean Blog.</a>
+        </p><p class="copyright text-muted">
+          Powered By <a target="_blank" href="https://hexo.io/">Hexo.</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+    <!-- After Footer Scripts -->
+<script src="/js/highlight.pack.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function(event) {
+    var codeBlocks = Array.prototype.slice.call(document.getElementsByTagName('pre'))
+    codeBlocks.forEach(function(block, index) {
+      hljs.highlightBlock(block);
+    });
+  });
+</script>
+
+  </body>
+</html>
+
