@@ -106,7 +106,7 @@
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://yoursite.com/2019/03/07/Pytorch中文手册》知识/1.png">
 <meta property="og:image" content="http://yoursite.com/2019/03/07/Pytorch中文手册》知识/2.png">
-<meta property="og:updated_time" content="2019-03-12T02:03:15.504Z">
+<meta property="og:updated_time" content="2019-03-31T08:52:38.539Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="《Pytorch中文手册》第一章知识">
 <meta name="twitter:description" content="pytorch是NumPy的替代品，可以使用GPU的强大计算能力，作为深度学习的一个研究平台。包含自动求导系统的的深度神经网络 Tensors（张量）所有的 Tensor 类型默认都是基于CPU #定义张量torch.tensor import torch  x = torch.tensor([5.5, 3],[4,3],[5,2]) 根据现有的张量$x$ 创建新的张量 y = torch.ran">
@@ -403,7 +403,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-03-12 10:03:15" itemprop="dateModified" datetime="2019-03-12T10:03:15+08:00">2019-03-12</time>
+                <time title="修改时间：2019-03-31 16:52:38" itemprop="dateModified" datetime="2019-03-31T16:52:38+08:00">2019-03-31</time>
               
             
           </span>
@@ -467,7 +467,8 @@
 <p>#定义张量<strong>torch.tensor</strong><br><br> <code>import torch
  x = torch.tensor([5.5, 3],[4,3],[5,2])</code><br><br> 根据现有的张量$x$ 创建新的张量<br> <code>y = torch.randn_like(x, dtype=torch.float)</code><br><br> <strong>tensor.size</strong>方法可以打印尺度大小<br> <code>print(x.size())</code><br><br> 使用索引方式来进行对张量的操作<code>print(x[:, 1])</code>返回<code>tensor([3,3,2])</code><br><br> <strong>torch.view</strong>: 可以改变张量的维度和大小  <code>y = x.view(2,3)</code><br></p>
 <h6 id="Numpy转换"><a href="#Numpy转换" class="headerlink" title="Numpy转换"></a><strong>Numpy转换</strong></h6><p><code>b = a.numpy()</code> a是tensor, b为numpy<br><br><code>a = torch.from_numpy(b)</code> b为numpy, a是tensor<br></p>
-<h6 id="cuda"><a href="#cuda" class="headerlink" title="cuda"></a><strong>cuda</strong></h6><p>直接从GPU创建张量<code>y = torch.ones_like(x, device=torch.device(&quot;cuda&quot;))</code><br><br>使用<strong>.to</strong>方法 可以将Tensor移动到任何设备中<code>x = x.to(torch.device(&quot;cuda&quot;))</code> </p>
+<h6 id="cuda"><a href="#cuda" class="headerlink" title="cuda"></a><strong>cuda</strong></h6><a id="more"></a>
+<p>直接从GPU创建张量<code>y = torch.ones_like(x, device=torch.device(&quot;cuda&quot;))</code><br><br>使用<strong>.to</strong>方法 可以将Tensor移动到任何设备中<code>x = x.to(torch.device(&quot;cuda&quot;))</code> </p>
 <h5 id="Autograd-自动求导机制"><a href="#Autograd-自动求导机制" class="headerlink" title="Autograd: 自动求导机制"></a><strong>Autograd: 自动求导机制</strong></h5><p>torch.Tensor是这个包的核心类。如果设置<strong> .requires_grad</strong>为<strong>True</strong>，那么将会追踪所有对于该张量的操作。 当完成计算后通过调用<strong>.backward()</strong>，自动计算所有的梯度， 这个张量的所有梯度将会自动积累到<strong>.grad</strong>属性。<br><br><code>x = torch.ones(2, 2, requires_grad=True)</code> 会得到grad_fn = AddBackward<br><br>要阻止张量跟踪历史记录，可以调用<strong>.detach()</strong>方法将其与计算历史记录分离，并禁止跟踪它将来的计算记录<code>fake_AB.detach()</code>。可以将代码块包装在<code>with torch.no_grad()：</code>比如<br><code>with torch.no_grad()：
     y = x ** 2 #不会添加到计算图中</code><br></p>
 <p>计算导数，你可以在Tensor上调用<strong>.backward()</strong>。 如果Tensor是一个<strong>标量</strong>（即它包含一个元素数据）则不需要为backward()指定任何参数。但是如果它有更多的元素，需要指定一个<strong>gradient</strong>参数来匹配张量的<strong>形状</strong>。<br><br><code>y = torch.tensor([-920.6895, -115.7301, -867.6995])
@@ -486,7 +487,6 @@ import torch.optim as optim</code><br><br><strong>定义网络</strong><br><br><
 <h6 id="定义优化器"><a href="#定义优化器" class="headerlink" title="定义优化器"></a>定义优化器</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">from torch.optim import optim</span><br><span class="line">criterion = nn.CrossEntropyLoss()</span><br><span class="line">optimizer = optim.SGD(net.parameters(), lr=0.001, momentum=0.9)</span><br></pre></td></tr></table></figure>
 <h6 id="训练"><a href="#训练" class="headerlink" title="训练"></a>训练</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">for epoch in range(2):</span><br><span class="line">    running_loss=0.0</span><br><span class="line">    for i, data in enumerate(trainloader, 0):</span><br><span class="line">        inputs, labels = data</span><br><span class="line">        inputs, labels = inputs.to(device), labels.to(device)</span><br><span class="line">        optimizer.zero_grad()</span><br><span class="line">        outputs = net(inputs)</span><br><span class="line">        loss = criterion(outputs,labels)</span><br><span class="line">        loss.backward()</span><br><span class="line">        optimizer.step()</span><br><span class="line"></span><br><span class="line">        running_loss +=loss.item()</span><br><span class="line">        if i%2000 == 0:</span><br><span class="line">            print(&apos;[%d,%5d] loss:%3f&apos; %(epoch+1,i+1,running_loss/2000))</span><br><span class="line">        running_loss = 0.0</span><br><span class="line">print(&apos;finish&apos;)</span><br></pre></td></tr></table></figure>
 <h6 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">dataiter = iter(testloader)</span><br><span class="line">images, labels = dataiter.next()</span><br><span class="line">imshow(torchvision.utils.make_grid(images))</span><br><span class="line">outputs = net(images)</span><br><span class="line">_, predicted = torch.max(outputs,1)</span><br><span class="line">print(&apos;predicted&apos;, &apos;&apos;.join(&apos;%5s&apos; %classes[predicted[j]] for j in range(4)))</span><br></pre></td></tr></table></figure>
-
       
     </div>
 
