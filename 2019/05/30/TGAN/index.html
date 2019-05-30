@@ -96,24 +96,26 @@
 
 
 
-  <meta name="description" content="开启我的hexo博客之旅~~~ Quick StartCreate a new post1$ hexo new &quot;My New Post&quot; More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More info: Generating Deploy t">
+  <meta name="description" content="训练代码train.pygithub地址：https://github.com/csmliu/STGAN数据准备 12345xa = tr_data.batch_op[0]   #训练图像a = tr_data.batch_op[1]   #训练图像的标签b = tf.random_shuffle(a)   # 目标对象的标签，用的是random_shuffle，得到的结果不一定是相反的_a =">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello hexo">
-<meta property="og:url" content="http://yoursite.com/2019/03/02/hello-world/index.html">
+<meta property="og:title" content="STGAN 部分代码">
+<meta property="og:url" content="http://yoursite.com/2019/05/30/TGAN/index.html">
 <meta property="og:site_name" content="Shu Ki">
-<meta property="og:description" content="开启我的hexo博客之旅~~~ Quick StartCreate a new post1$ hexo new &quot;My New Post&quot; More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More info: Generating Deploy t">
+<meta property="og:description" content="训练代码train.pygithub地址：https://github.com/csmliu/STGAN数据准备 12345xa = tr_data.batch_op[0]   #训练图像a = tr_data.batch_op[1]   #训练图像的标签b = tf.random_shuffle(a)   # 目标对象的标签，用的是random_shuffle，得到的结果不一定是相反的_a =">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-03-02T08:11:40.884Z">
+<meta property="og:image" content="http://yoursite.com/2019/05/30/TGAN/1.jpg">
+<meta property="og:updated_time" content="2019-05-30T09:17:48.406Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello hexo">
-<meta name="twitter:description" content="开启我的hexo博客之旅~~~ Quick StartCreate a new post1$ hexo new &quot;My New Post&quot; More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More info: Generating Deploy t">
+<meta name="twitter:title" content="STGAN 部分代码">
+<meta name="twitter:description" content="训练代码train.pygithub地址：https://github.com/csmliu/STGAN数据准备 12345xa = tr_data.batch_op[0]   #训练图像a = tr_data.batch_op[1]   #训练图像的标签b = tf.random_shuffle(a)   # 目标对象的标签，用的是random_shuffle，得到的结果不一定是相反的_a =">
+<meta name="twitter:image" content="http://yoursite.com/2019/05/30/TGAN/1.jpg">
 
 
 
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/03/02/hello-world/">
+  <link rel="canonical" href="http://yoursite.com/2019/05/30/TGAN/">
 
 
 
@@ -123,7 +125,7 @@
   };
 </script>
 
-  <title>Hello hexo | Shu Ki</title>
+  <title>STGAN 部分代码 | Shu Ki</title>
   
 
 
@@ -339,7 +341,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/02/hello-world/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/30/TGAN/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Shuki">
@@ -356,7 +358,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Hello hexo
+          <h1 class="post-title" itemprop="name headline">STGAN 部分代码
 
               
             
@@ -382,7 +384,7 @@
                 
               
 
-              <time title="创建时间：2019-03-02 15:07:00 / 修改时间：16:11:40" itemprop="dateCreated datePublished" datetime="2019-03-02T15:07:00+08:00">2019-03-02</time>
+              <time title="创建时间：2019-05-30 16:59:52 / 修改时间：17:17:48" itemprop="dateCreated datePublished" datetime="2019-05-30T16:59:52+08:00">2019-05-30</time>
             
 
             
@@ -428,15 +430,16 @@
       
 
       
-        <p>开启我的hexo博客之旅~~~</p>
-<h3 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h3><h4 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h4 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h4 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h4 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+        <h4 id="训练代码train-py"><a href="#训练代码train-py" class="headerlink" title="训练代码train.py"></a>训练代码train.py</h4><p><font color="FF6699">github地址：<a href="https://github.com/csmliu/STGAN" target="_blank" rel="noopener">https://github.com/csmliu/STGAN</a><a herf="https://github.com/csmliu/STGAN"></a></font><br><br><strong>数据准备 </strong><br><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">xa = tr_data.batch_op[0]   #训练图像</span><br><span class="line">a = tr_data.batch_op[1]   #训练图像的标签</span><br><span class="line">b = tf.random_shuffle(a)   # 目标对象的标签，用的是random_shuffle，得到的结果不一定是相反的</span><br><span class="line">_a = (tf.to_float(a) * 2 - 1) * thres_int  #将标签归一化</span><br><span class="line">_b = (tf.to_float(b) * 2 - 1) * thres_int</span><br></pre></td></tr></table></figure></p>
+<p><strong>生成部分</strong><br><br><a id="more"></a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">z = Genc(xa) #数据送入编码器</span><br><span class="line">zb = Gstu(z, _b-_a if label==&apos;diff&apos; else _b) if use_stu else z   #标签为&apos;diff&apos;形式和encode结果送入STU模块</span><br><span class="line">xb_ = Gdec(zb, _b-_a if label==&apos;diff&apos; else _b)   #STU输出的结果和&apos;diff&apos;形式的标签一起送入解码器</span><br><span class="line">with tf.control_dependencies([xb_]):   #形成依赖关系，一定要有xb_才能进行下面操作</span><br><span class="line">    za = Gstu(z, _a-_a if label==&apos;diff&apos; else _a) if use_stu else z </span><br><span class="line">    xa_ = Gdec(za, _a-_a if label==&apos;diff&apos; else _a)   #重建</span><br></pre></td></tr></table></figure></p>
+<p><strong>判别</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">xa_logit_gan, xa_logit_att = D(xa)  #判别真假和属性标签  真图像</span><br><span class="line">xb__logit_gan, xb__logit_att = D(xb_)  #假图像</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">if mode == &apos;wgan&apos;:  # wgan-gp loss</span><br><span class="line">    wd = tf.reduce_mean(xa_logit_gan) - tf.reduce_mean(xb__logit_gan)</span><br><span class="line">    d_loss_gan = -wd</span><br><span class="line">    gp = models.gradient_penalty(D, xa, xb_)</span><br><span class="line">    </span><br><span class="line">xa_loss_att = tf.losses.sigmoid_cross_entropy(a, xa_logit_att)   #真图分类标签损失</span><br><span class="line">d_loss = d_loss_gan + gp * 10.0 + xa_loss_att #判别器损失</span><br><span class="line"></span><br><span class="line">if mode == &apos;wgan&apos;:</span><br><span class="line">    xb__loss_gan = -tf.reduce_mean(xb__logit_gan)</span><br><span class="line">xb__loss_att = tf.losses.sigmoid_cross_entropy(b, xb__logit_att)  #生成图分类标签损失</span><br><span class="line">xa__loss_rec = tf.losses.absolute_difference(xa, xa_)   #重建损失</span><br><span class="line">g_loss = xb__loss_gan + xb__loss_att * 10.0 + xa__loss_rec * rec_loss_weight   #生成器损失</span><br></pre></td></tr></table></figure></p>
+<h4 id="384-HD-celebA数据集准备"><a href="#384-HD-celebA数据集准备" class="headerlink" title="384 HD-celebA数据集准备"></a>384 HD-celebA数据集准备</h4><p><font color="FF6699">github: <a href="https://github.com/LynnHo/HD-CelebA-Cropper" target="_blank" rel="noopener">https://github.com/LynnHo/HD-CelebA-Cropper</a><a herf="https://github.com/LynnHo/HD-CelebA-Cropper"></a></font><br></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">import cv2</span><br><span class="line">imread = cv2.imread</span><br><span class="line">imwrite = partial(cv2.imwrite, params=[int(cv2.IMWRITE_JPEG_QUALITY), _DEAFAULT_JPG_QUALITY])      #参数为写JPG图片的质量默认为95</span><br><span class="line">align_crop = cropper.align_crop_5pts_opencv   #声明剪切函数</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">#创建保存文件</span><br><span class="line">save_dir = os.path.join(args.data_dir, &apos;data_crop_%s_%s&apos; % (args.crop_size, args.save_format))</span><br><span class="line">if not os.path.isdir(save_dir):</span><br><span class="line">    os.mkdir(save_dir)</span><br><span class="line"></span><br><span class="line">#读取图像和定位</span><br><span class="line">img_dir = os.path.join(args.data_dir, &apos;img_align_celeba&apos;)</span><br><span class="line">landmark_file = os.path.join(args.data_dir, &apos;list_landmarks_align_celeba.csv&apos;)</span><br><span class="line"></span><br><span class="line"># np.loadtxt是numpy读文件的，skiprows是跳过的行数，delimiter是每行元素的分隔符， usecols是每行第几个</span><br><span class="line">img_names = np.loadtxt(landmark_file, skiprows=2, usecols=0, dtype=str)</span><br><span class="line">landmarks = np.loadtxt(landmark_file, skiprows=2, delimiter=&apos;,&apos;， usecols=range(1, 11))</span><br><span class="line">landmarks.shape = -1, 5, 2   #将五个点的x,y坐标排好</span><br><span class="line">mean_lm = cropper._DEFAULT_MEAN_LANDMARKS    #平均定位点坐标是固定的数值</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">from multiprocessing import Pool</span><br><span class="line">pool = Pool(args.n_worker) #多线程</span><br><span class="line">for _ in tqdm(pool.imap(work, range(len(img_names))), total=len(img_names)):</span><br><span class="line">    pass</span><br><span class="line">pool.close()</span><br><span class="line">pool.join()</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">def work(i):  # a single work</span><br><span class="line">    for _ in range(3):  # try three times</span><br><span class="line">        img = imread(os.path.join(img_dir, img_names[i]))</span><br><span class="line">        img_crop = align_crop(img,</span><br><span class="line">                                  landmarks[i],</span><br><span class="line">                                  mean_lm,</span><br><span class="line">                                  crop_size=args.crop_size,  </span><br><span class="line">                                  face_factor=args.face_factor,</span><br><span class="line">                                  landmark_factor=args.landmark_factor,</span><br><span class="line">                                  align_type=args.align_type,</span><br><span class="line">                                  order=args.order,</span><br><span class="line">                                  mode=args.mode)   #face_factor=0.65，landmark_factor=0.35</span><br><span class="line">        imwrite(os.path.join(save_dir, img_names[i].replace(&apos;jpg&apos;, args.save_format)), img_crop)</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">def align_crop_5pts_opencv(img, src_landmarks, mean_landmarks=_DEFAULT_MEAN_LANDMARKS,</span><br><span class="line">                           crop_size=384, face_factor=0.65,landmark_factor=0.35, align_type=&apos;similarity&apos;,</span><br><span class="line">                           order=3， mode=&apos;edge&apos;):</span><br><span class="line">    move = np.array([img.shape[1] // 2, img.shape[0] // 2]) #图片中心点</span><br><span class="line">    v_border = img.shape[0] - crop_size</span><br><span class="line">    w_border = img.shape[1] - crop_size</span><br><span class="line">    </span><br><span class="line">    mean_landmarks -= np.array([mean_landmarks[0, :] + mean_landmarks[1, :]]) / 2.0   #两只眼睛的中间作为图像中心</span><br><span class="line">    trg_landmarks = mean_landmarks * (crop_size * face_factor * landmark_factor) + move  #目标坐标</span><br><span class="line">   tform = cv2.estimateAffine2D(trg_landmarks, src_landmarks, ransacReprojThreshold=np.Inf)[0]   #形成仿射矩阵</span><br><span class="line">    #修正目标的眼睛中间作为目标图像的中心</span><br><span class="line">   trg_mid = (trg_landmarks[0, :] + trg_landmarks[1, :]) / 2.0</span><br><span class="line">   src_mid = (src_landmarks[0, :] + src_landmarks[1, :]) / 2.0</span><br><span class="line">   new_trg_mid = cv2.transform(np.array([[trg_mid]]), tform)[0, 0]</span><br><span class="line">   tform[:, 2] += src_mid - new_trg_mid</span><br><span class="line">   </span><br><span class="line">   output_shape = (crop_size // 2 + move[1] + 1, crop_size // 2 + move[0] + 1)</span><br><span class="line">   # cv2.WARP_INVERSE_MAP + cv2.INTER_CUBIC使用插值方式</span><br><span class="line">   img_align = cv2.warpAffine(img, tform, output_shape[::-1], flags=cv2.WARP_INVERSE_MAP + cv2.INTER_CUBIC,</span><br><span class="line">                              borderMode=border[mode])</span><br></pre></td></tr></table></figure>
+<p>结果<br><img src="/2019/05/30/TGAN/1.jpg" alt></p>
 
       
     </div>
@@ -467,15 +470,15 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2019/04/20/器学习-2-决策树/" rel="next" title="机器学习(2)--决策树">
+                <i class="fa fa-chevron-left"></i> 机器学习(2)--决策树
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/03/02/hexo发文测试/" rel="prev" title="leetcode-数组1">
-                leetcode-数组1 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -672,7 +675,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Quick-Start"><span class="nav-number">1.</span> <span class="nav-text">Quick Start</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Create-a-new-post"><span class="nav-number">1.1.</span> <span class="nav-text">Create a new post</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Run-server"><span class="nav-number">1.2.</span> <span class="nav-text">Run server</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Generate-static-files"><span class="nav-number">1.3.</span> <span class="nav-text">Generate static files</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Deploy-to-remote-sites"><span class="nav-number">1.4.</span> <span class="nav-text">Deploy to remote sites</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#训练代码train-py"><span class="nav-number">1.</span> <span class="nav-text">训练代码train.py</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#384-HD-celebA数据集准备"><span class="nav-number">2.</span> <span class="nav-text">384 HD-celebA数据集准备</span></a></li></ol></div>
             
 
           </div>
