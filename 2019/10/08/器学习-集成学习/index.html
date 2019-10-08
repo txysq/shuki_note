@@ -96,21 +96,24 @@
 
 
 
-  <meta name="description" content="机器学习–集成学习boosting:  提高精确度 减少偏差 串行 所有数据都参加，权重不同 bagging:    减少方差 并行  每次自助法随机抽取，权重相同 在容易受到样本扰动的学习器（如不剪枝的决策树、神经网络）中效果更明显 bagging与随机森林 boosting的扩展：adaboost, GDBT, XGBoostadaboost :  前一个弱分类器输出的误差最大的样本在下一个个">
+  <meta name="description" content="机器学习–集成学习boosting:  提高精确度 减少偏差 串行 所有数据都参加，权重不同 bagging:    减少方差 并行  每次自助法随机抽取，权重相同 在容易受到样本扰动的学习器（如不剪枝的决策树、神经网络）中效果更明显">
 <meta name="keywords" content="机器学习">
 <meta property="og:type" content="article">
 <meta property="og:title" content="机器学习--集成学习">
 <meta property="og:url" content="http://yoursite.com/2019/10/08/器学习-集成学习/index.html">
 <meta property="og:site_name" content="Shu Ki">
-<meta property="og:description" content="机器学习–集成学习boosting:  提高精确度 减少偏差 串行 所有数据都参加，权重不同 bagging:    减少方差 并行  每次自助法随机抽取，权重相同 在容易受到样本扰动的学习器（如不剪枝的决策树、神经网络）中效果更明显 bagging与随机森林 boosting的扩展：adaboost, GDBT, XGBoostadaboost :  前一个弱分类器输出的误差最大的样本在下一个个">
+<meta property="og:description" content="机器学习–集成学习boosting:  提高精确度 减少偏差 串行 所有数据都参加，权重不同 bagging:    减少方差 并行  每次自助法随机抽取，权重相同 在容易受到样本扰动的学习器（如不剪枝的决策树、神经网络）中效果更明显">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://yoursite.com/2019/10/08/器学习-集成学习/rf1.png">
 <meta property="og:image" content="http://yoursite.com/2019/10/08/器学习-集成学习/adaboost.png">
 <meta property="og:image" content="http://yoursite.com/2019/10/08/器学习-集成学习/GBDT.png">
-<meta property="og:updated_time" content="2019-10-08T05:13:35.104Z">
+<meta property="og:image" content="http://yoursite.com/2019/10/08/器学习-集成学习/xgboost.png">
+<meta property="og:image" content="http://yoursite.com/2019/10/08/器学习-集成学习/xgboost2.png">
+<meta property="og:image" content="http://yoursite.com/2019/10/08/器学习-集成学习/xgboost3.png">
+<meta property="og:updated_time" content="2019-10-08T06:06:39.353Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="机器学习--集成学习">
-<meta name="twitter:description" content="机器学习–集成学习boosting:  提高精确度 减少偏差 串行 所有数据都参加，权重不同 bagging:    减少方差 并行  每次自助法随机抽取，权重相同 在容易受到样本扰动的学习器（如不剪枝的决策树、神经网络）中效果更明显 bagging与随机森林 boosting的扩展：adaboost, GDBT, XGBoostadaboost :  前一个弱分类器输出的误差最大的样本在下一个个">
+<meta name="twitter:description" content="机器学习–集成学习boosting:  提高精确度 减少偏差 串行 所有数据都参加，权重不同 bagging:    减少方差 并行  每次自助法随机抽取，权重相同 在容易受到样本扰动的学习器（如不剪枝的决策树、神经网络）中效果更明显">
 <meta name="twitter:image" content="http://yoursite.com/2019/10/08/器学习-集成学习/rf1.png">
 
 
@@ -387,7 +390,7 @@
                 
               
 
-              <time title="创建时间：2019-10-08 12:58:00 / 修改时间：13:13:35" itemprop="dateCreated datePublished" datetime="2019-10-08T12:58:00+08:00">2019-10-08</time>
+              <time title="创建时间：2019-10-08 12:58:00 / 修改时间：14:06:39" itemprop="dateCreated datePublished" datetime="2019-10-08T12:58:00+08:00">2019-10-08</time>
             
 
             
@@ -457,12 +460,15 @@
 <p><font color="FF6699"><strong>bagging: </strong></font>  </p>
 <p><li>减少方差 并行</li> </p>
 <p><li>每次自助法随机抽取，权重相同</li></p>
-<p><li>在容易受到样本扰动的学习器（如不剪枝的决策树、神经网络）中效果更明显</li><br></p>
+<p><li>在容易受到样本扰动的学习器（如不剪枝的决策树、神经网络）中效果更明显</li><br><br><a id="more"></a></p>
 <h4 id="bagging与随机森林"><a href="#bagging与随机森林" class="headerlink" title="bagging与随机森林"></a>bagging与随机森林<br></h4><p><img src="/2019/10/08/器学习-集成学习/rf1.png" alt="upload"></p>
 <h4 id="boosting的扩展：adaboost-GDBT-XGBoost"><a href="#boosting的扩展：adaboost-GDBT-XGBoost" class="headerlink" title="boosting的扩展：adaboost, GDBT, XGBoost"></a>boosting的扩展：adaboost, GDBT, XGBoost<br></h4><p><font color="FF6699"><strong>adaboost :  </strong></font><br><br>前一个弱分类器输出的误差最大的样本在下一个个分类器中的权重会被加强。集成的时候误差小的分类器比重大。<br><br><img src="/2019/10/08/器学习-集成学习/adaboost.png" alt="upload"></p>
-<p>&lt;a href= <a href="https://www.jianshu.com/p/0d850d85dcbd&gt;" target="_blank" rel="noopener">https://www.jianshu.com/p/0d850d85dcbd&gt;</a><font color="aaddff">公式推导 </font><br><br>&lt;a href= <a href="http://www.360doc.com/content/14/1109/12/20290918_423780183.shtml&gt;" target="_blank" rel="noopener">http://www.360doc.com/content/14/1109/12/20290918_423780183.shtml&gt;</a><font color="aaddff">过程与实例 </font><br></p>
+<p><font color="aaddff">公式推导</font><a href="https://www.jianshu.com/p/0d850d85dcbd" target="_blank" rel="noopener">https://www.jianshu.com/p/0d850d85dcbd</a><br></p>
+<p><font color="aaddff">过程与实例 </font><a href="http://www.360doc.com/content/14/1109/12/20290918_423780183.html" target="_blank" rel="noopener">http://www.360doc.com/content/14/1109/12/20290918_423780183.html</a><br></p>
 <p><font color="FF6699"><strong>GBDT：</strong></font><br><br>每一轮训练时所关注的重点是本轮产生结果的<strong>残差</strong>，下一轮以本轮残差作为输入，尽量去拟合这个残差，使下一轮输出的残差不断变小。（不断提高精度）<br><br>GBDT算法只利用了一阶的导数信息，可以做到每一轮一定向损失函数减小的梯度方向变化。模型的训练过程是对一任意可导目标函数的优化过程。<br> </p>
-<p><font color="afaaff">GBDT无论用于分类还是回归一直都是使用的CART 回归树。对于分类问题每一个类别建立一颗子树。</font><br><br><img src="/2019/10/08/器学习-集成学习/GBDT.png" alt="upload"></p>
+<p><font color="afaaff">GBDT无论用于分类还是回归一直都是使用的CART 回归树。对于分类问题每一个类别建立一颗子树。</font><br><br><img src="/2019/10/08/器学习-集成学习/GBDT.png" alt="upload"><br><br><br><br></p>
+<p><font color="FF6699"><strong>xgboost：</strong></font><br><br>xgboost对损失函数做了<strong>二阶的泰勒</strong>展开，并在目标函数之外加入了<strong>正则项</strong>对整体求最优解，用以权衡目标函数的下降和模型的复杂程度，避免过拟合。<br><br>使用泰勒展开取得二阶倒数 可以在不选定损失函数具体形式的情况下用于算法优化分析.本质上也就把损失函数的选取和模型算法优化/参数选择分开了. 这种去耦合增加了XGBoost的适用性。<br><br><img src="/2019/10/08/器学习-集成学习/xgboost.png" alt="upload"><br><img src="/2019/10/08/器学习-集成学习/xgboost2.png" alt="upload"></p>
+<p><font color="aaddff">参考文献</font> <a href="https://www.cnblogs.com/jiangxinyang/p/9248154.html" target="_blank" rel="noopener">https://www.cnblogs.com/jiangxinyang/p/9248154.html</a><br><img src="/2019/10/08/器学习-集成学习/xgboost3.png" alt="upload"></p>
 
       
     </div>

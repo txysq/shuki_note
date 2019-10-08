@@ -110,7 +110,7 @@
 <meta property="og:image" content="http://yoursite.com/2019/07/27/一对多图像翻译MISO/miso5.png">
 <meta property="og:image" content="http://yoursite.com/2019/07/27/一对多图像翻译MISO/miso6.png">
 <meta property="og:image" content="http://yoursite.com/2019/07/27/一对多图像翻译MISO/miso7.png">
-<meta property="og:updated_time" content="2019-07-27T04:38:24.000Z">
+<meta property="og:updated_time" content="2019-10-08T06:06:33.643Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="一对多图像翻译MISO">
 <meta name="twitter:description" content="Mutual Information Loss with Stochastic Style Representations for Multimodal Image-to-Image Translation 用于多模态图像到图像翻译的随机风格特征的互信息损失多模态：源域中的一张图像迁移到目标域的多张图像。（一对多） 当前的方法：主要是图像重建损失中的特征解缠绕 提出的方法：使用源域中的内容表征，目">
@@ -390,12 +390,24 @@
                 
               
 
-              <time title="创建时间：2019-07-27 12:12:57 / 修改时间：12:38:24" itemprop="dateCreated datePublished" datetime="2019-07-27T12:12:57+08:00">2019-07-27</time>
+              <time title="创建时间：2019-07-27 12:12:57" itemprop="dateCreated datePublished" datetime="2019-07-27T12:12:57+08:00">2019-07-27</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-10-08 14:06:33" itemprop="dateModified" datetime="2019-10-08T14:06:33+08:00">2019-10-08</time>
               
             
           </span>
@@ -438,7 +450,7 @@
       
         <h5 id="Mutual-Information-Loss-with-Stochastic-Style-Representations-for-Multimodal-Image-to-Image-Translation"><a href="#Mutual-Information-Loss-with-Stochastic-Style-Representations-for-Multimodal-Image-to-Image-Translation" class="headerlink" title="Mutual Information Loss with Stochastic Style Representations for Multimodal Image-to-Image Translation "></a>Mutual Information Loss with Stochastic Style Representations for Multimodal Image-to-Image Translation <br></h5><h6 id="用于多模态图像到图像翻译的随机风格特征的互信息损失"><a href="#用于多模态图像到图像翻译的随机风格特征的互信息损失" class="headerlink" title="用于多模态图像到图像翻译的随机风格特征的互信息损失"></a>用于多模态图像到图像翻译的随机风格特征的互信息损失</h6><p><font color="FF6699"><strong>多模态：</strong></font>源域中的一张图像迁移到目标域的多张图像。（一对多）<br></p>
 <p><font color="FF6699"><strong>当前的方法：</strong></font>主要是图像重建损失中的特征解缠绕<br></p>
-<p><font color="FF6699"><strong>提出的方法：</strong></font>使用源域中的内容表征，目标域风格表征作为条件。使用Mutual Information Loss 互信息loss代替重建loss。<br></p>
+<p><font color="FF6699"><strong>提出的方法：</strong></font>使用源域中的内容表征，目标域风格表征作为条件。使用Mutual Information Loss 互信息loss代替重建loss。<br><br><a id="more"></a></p>
 <h6 id="引言"><a href="#引言" class="headerlink" title="引言"></a><font color="447863">引言</font></h6><p>现有的模型是将风格和内容进行分离，论文认为内容和风格存在<font color="FF6699"><strong>层次关系（hierarchy）</strong></font>，内容作为基础，风格作为条件以实现高质量的迁移。所以，对于好的迁移，源图像的内容特征应该被保留且风格特征轻微的覆盖在内容特征中。条件编码器要学习如何使用风格特征来调节内容特征以生成高质量图像。</p><br><p>现有的重建损失不能提取细节信息，使多模态缺乏多样性，提出了一个新的<font color="FF6699"><strong>互信息损失</strong></font>。将潜在变量解释为随机变量，并基于互信息定义新的随机损失函数以反映这种解释。</p>
 
 <h6 id="模型"><a href="#模型" class="headerlink" title="模型"></a><font color="447863">模型</font><br></h6><p><img src="/2019/07/27/一对多图像翻译MISO/MISO1.png" alt="upload successful"><br><img src="/2019/07/27/一对多图像翻译MISO/MISO2.png" alt="upload successful"></p>
